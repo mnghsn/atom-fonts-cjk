@@ -4,6 +4,15 @@
 
 ![A screenshot of fonts-cjk](https://raw.githubusercontent.com/jmlntw/atom-fonts-cjk/master/screenshot.png)
 
+## Features
+
+* Fonts are packaged and loaded to Atom through the power of CSS (`@font-face`). No longer need to install them.
+* Fonts can be applied to editor, Markdown Preview panel and workspace.
+
+## Installation
+
+Search for `fonts-cjk` in Atom settings view and install it or run `apm install fonts-cjk` from the command line.
+
 ## Available Fonts
 
 | Font Name | License |
