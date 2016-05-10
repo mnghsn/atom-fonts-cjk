@@ -1,0 +1,37 @@
+@root-path: 'atom://fonts-cjk/resources';
+
+.font-face (@name, @weight, @style, @file) {
+  @font-path: '@{root-path}/@{file}';
+  @font-face {
+    font-family: @name;
+    font-weight: @weight;
+    font-style: @style;
+    src: local(@name), url(@font-path);
+  }
+}
+
+.editor-font (@fonts) {
+  atom-text-editor,
+  atom-text-editor::shadow {
+    font-family: @fonts;
+  }
+  .settings-view {
+    atom-text-editor.mini,
+    atom-text-editor.mini::shadow {
+      font-family: @fonts !important;
+    }
+  }
+}
+
+.markdown-preview-font (@fonts) {
+  .markdown-preview {
+    font-family: @fonts !important;
+  }
+}
+
+.workspace-font (@fonts) {
+  atom-workspace,
+  .settings-view {
+    font-family: @fonts !important;
+  }
+}
