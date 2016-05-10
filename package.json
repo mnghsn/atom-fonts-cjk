@@ -1,0 +1,13 @@
+{
+  "name": "fonts-cjk",
+  "version": "0.0.0",
+  "description": "Delivers better CJK fonts to Atom editor.",
+  "author": "Jimmy Lin",
+  "license": "MIT",
+  "repository": "https://github.com/jmlntw/atom-fonts-cjk",
+  "private": true,
+  "main": "./lib/main",
+  "engines": {
+    "atom": ">=1.1.0 <2.0.0"
+  }
+}
