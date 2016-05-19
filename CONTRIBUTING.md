@@ -10,7 +10,7 @@
 * Use UTF-8 encoding without BOM.
 * Use Unix-style line endings (`LF`).
 * End files with a newline.
-* Remove any trailing whitespace characters except in Markdown file where a line-break must be forced.
+* Remove any trailing whitespace characters except in Markdown files where a line-break must be forced.
 * Keep line length less than 120 characters, preferably less than 80 characters.
 * When in doubt, follow the conventions you see used in the source already.
 
@@ -28,7 +28,7 @@
 ## Issue Reporting Guidelines
 
 * Bugs and enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/).
-* Try to search for your issue before submitting it. It may already been answered or fixed.
+* Try to search for your issue before submitting it. It may have already been answered or fixed.
 * Check if the issue is reproducible with the last stable version.
 * Use a clear and descriptive title for the issue.
 * When reporting a bug, describe the exact steps which reproduce the problem.
@@ -40,5 +40,5 @@
 * Create a topic branch from `master`.
 * Follow the [styleguides](#styleguides).
 * Squash the commit if there are too many small ones.
-* If adding a new feature, provide convincing reason to add this feature.
-* If fixing a bug, provide detailed description in the PR.
+* If adding a new feature, provide convincing reasons to add this feature.
+* If fixing a bug, provide a detailed description in the PR.
