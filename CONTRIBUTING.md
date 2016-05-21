@@ -5,7 +5,7 @@
 
 ### Syntax
 
-* Use [editorconfig](http://editorconfig.org/) to unifying coding styles.
+* Use [editorconfig](http://editorconfig.org/) to unify coding styles.
 * Use 2 spaces indentation.
 * Use UTF-8 encoding without BOM.
 * Use Unix-style line endings (`LF`).
