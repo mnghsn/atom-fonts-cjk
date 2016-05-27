@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.2 (2016-05-28)
+
+* Unify fonts list sorting in settings view.
+* Add contributing guidelines (`CONTRIBUTING.md`).
+* Add some keywords to `package.json`.
+
 ## v0.1.1 (2016-05-10)
 
 * Add more information to readme.
