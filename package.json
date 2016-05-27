@@ -2,6 +2,15 @@
   "name": "fonts-cjk",
   "version": "0.1.1",
   "description": "Delivers better CJK fonts to Atom editor.",
+  "keywords": [
+    "fonts",
+    "cjk",
+    "chinese",
+    "japanese",
+    "korean",
+    "monospace",
+    "typography"
+  ],
   "author": "Jimmy Lin",
   "license": "MIT",
   "repository": "https://github.com/jmlntw/atom-fonts-cjk",
