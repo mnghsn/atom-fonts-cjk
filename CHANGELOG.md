@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.3 (2017-01-13)
+
+* Remove Shadow DOM styles.
+* Atom 1.13 or above is required.
+
 ## v0.1.2 (2016-05-28)
 
 * Unify fonts list sorting in settings view.
