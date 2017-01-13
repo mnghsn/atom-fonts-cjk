@@ -11,13 +11,11 @@
 }
 
 .editor-font (@fonts) {
-  atom-text-editor,
-  atom-text-editor::shadow {
+  atom-text-editor {
     font-family: @fonts;
   }
   .settings-view {
-    atom-text-editor.mini,
-    atom-text-editor.mini::shadow {
+    atom-text-editor.mini {
       font-family: @fonts !important;
     }
   }
