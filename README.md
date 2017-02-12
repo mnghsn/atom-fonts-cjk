@@ -1,5 +1,8 @@
 # CJK Fonts Package for Atom Editor
 
+[![Build Status](https://travis-ci.org/jmlntw/atom-fonts-cjk.svg?branch=master)](https://travis-ci.org/jmlntw/atom-fonts-cjk)
+[![Build status](https://ci.appveyor.com/api/projects/status/4oa8n75m8bf7dumw/branch/master?svg=true)](https://ci.appveyor.com/project/jmlntw/atom-fonts-cjk/branch/master)
+
 **fonts-cjk** delivers better CJK (Chinese/Japanese/Korean) fonts to Atom editor without installing new fonts to system. Inspired by [braver/fonts](https://github.com/braver/fonts).
 
 ![A screenshot of fonts-cjk](https://raw.githubusercontent.com/jmlntw/atom-fonts-cjk/master/screenshot.png)

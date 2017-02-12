@@ -42,3 +42,16 @@
 * Squash the commit if there are too many small ones.
 * If adding a new feature, provide convincing reasons to add this feature.
 * If fixing a bug, provide a detailed description in the PR.
+
+## Development Setup
+
+```bash
+# Fork and clone this repository.
+$ git clone https://github.com/<username>/atom-fonts-cjk.git
+$ cd atom-fonts-cjk
+
+# Run Atom package specs to make sure everything works fine.
+$ atom --test --timeout 60 ./spec/
+```
+
+For more information about Atom package specs, see [Hacking Atom: Writing specs](http://flight-manual.atom.io/hacking-atom/sections/writing-specs/) section in the [Atom Flight Manual](http://flight-manual.atom.io/).
