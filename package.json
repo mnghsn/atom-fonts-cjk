@@ -11,9 +11,19 @@
     "monospace",
     "typography"
   ],
-  "author": "Jimmy Lin",
+  "author": {
+    "name": "Jimmy Lin",
+    "email": "jmlntw@gmail.com",
+    "url": "https://jmln.tw/"
+  },
   "license": "MIT",
-  "repository": "https://github.com/jmlntw/atom-fonts-cjk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmlntw/atom-fonts-cjk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jmlntw/atom-fonts-cjk/issues"
+  },
   "private": true,
   "main": "./lib/main",
   "engines": {
