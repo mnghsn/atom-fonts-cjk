@@ -21,7 +21,7 @@ describe 'Fonts CJK', ->
     it 'set editor font', ->
       atom.config.set('fonts-cjk.editorFont', 'Migu 1M')
       expect(atom.config.get('fonts-cjk.editorFont'), 'Migu 1M')
-      expect(getFontFamily('atom-text-editor')).toBe('Migu 1M')
+      expect(getFontFamily('atom-text-editor.editor')).toBe('Migu 1M')
 
   describe 'when workspace font settings is changed', ->
     it 'set workspace font', ->
