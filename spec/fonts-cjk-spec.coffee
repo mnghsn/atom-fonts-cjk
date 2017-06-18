@@ -28,6 +28,8 @@ describe 'Fonts CJK', ->
       waitsForPromise ->
         atom.packages.activatePackage('github')
       runs ->
+        atom.commands.dispatch(workspaceElement, 'github:toggle-git-tab')
+      runs ->
         atom.config.set('fonts-cjk.workspaceFont', 'Migu 1P')
         expect(atom.config.get('fonts-cjk.workspaceFont'), 'Migu 1P')
         expect(getFontFamily()).toBe('Migu 1P')
