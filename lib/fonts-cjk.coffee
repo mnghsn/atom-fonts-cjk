@@ -13,9 +13,9 @@ module.exports =
         body.removeAttribute(attr)
 
     applyFont = ->
-      editorFont = atom.config.get("fonts-cjk.editorFont");
-      markdownPreviewFont = atom.config.get("fonts-cjk.markdownPreviewFont");
-      workspaceFont = atom.config.get("fonts-cjk.workspaceFont");
+      editorFont = atom.config.get("fonts-cjk.editorFont")
+      markdownPreviewFont = atom.config.get("fonts-cjk.markdownPreviewFont")
+      workspaceFont = atom.config.get("fonts-cjk.workspaceFont")
       fonts = """
         --fonts-cjk-editorFont: "#{editorFont}";
         --fonts-cjk-markdownPreviewFont: "#{markdownPreviewFont}";
