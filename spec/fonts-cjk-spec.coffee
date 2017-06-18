@@ -25,15 +25,9 @@ describe 'Fonts CJK', ->
 
   describe 'when workspace font settings is changed', ->
     it 'set workspace font', ->
-      waitsForPromise ->
-        atom.packages.activatePackage('github')
-      runs ->
-        atom.commands.dispatch(workspaceElement, 'github:toggle-git-tab')
-      runs ->
-        atom.config.set('fonts-cjk.workspaceFont', 'Migu 1P')
-        expect(atom.config.get('fonts-cjk.workspaceFont'), 'Migu 1P')
-        expect(getFontFamily()).toBe('Migu 1P')
-        expect(getFontFamily('.github-Panel')).toBe('Migu 1P')
+      atom.config.set('fonts-cjk.workspaceFont', 'Migu 1P')
+      expect(atom.config.get('fonts-cjk.workspaceFont'), 'Migu 1P')
+      expect(getFontFamily()).toBe('Migu 1P')
 
   describe 'when markdown preview font settings is changed', ->
     it 'set markdown preview font', ->
