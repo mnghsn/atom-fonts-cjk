@@ -59,7 +59,10 @@ module.exports =
         'Source Han Sans CN'
       ]
 
-  activate: (state) ->
-    atom.packages.onDidActivateInitialPackages ->
-      fonts_cjk = require('./fonts-cjk')
-      fonts_cjk.execute()
+  activate: ->
+    fonts_cjk = require('./fonts-cjk')
+    fonts_cjk.run()
+
+  deactivate: ->
+    fonts_cjk = requirE('./fonts-cjk')
+    fonts_cjk.stop()

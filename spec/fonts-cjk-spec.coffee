@@ -13,7 +13,7 @@ describe 'Fonts CJK', ->
     waitsForPromise ->
       atom.workspace.open('file.txt')
     runs ->
-      fonts_cjk.execute()
+      fonts_cjk.run()
       workspaceElement = atom.views.getView(atom.workspace)
       jasmine.attachToDOM(workspaceElement)
 
