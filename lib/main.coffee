@@ -64,5 +64,5 @@ module.exports =
     fonts_cjk.run()
 
   deactivate: ->
-    fonts_cjk = requirE('./fonts-cjk')
+    fonts_cjk = require('./fonts-cjk')
     fonts_cjk.stop()
