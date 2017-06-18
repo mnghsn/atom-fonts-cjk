@@ -1,5 +1,5 @@
 module.exports =
-  execute: ->
+  run: ->
     body = document.body
 
     triggerMeasurements = ->
@@ -19,6 +19,14 @@ module.exports =
       'workspaceFont'
     ].forEach (type) ->
       applyFont(type)
-      atom.config.observe("fonts-cjk.#{type}", -> applyFont(type))
+      @observer = atom.config.observe("fonts-cjk.#{type}", -> applyFont(type))
 
     setTimeout(triggerMeasurements, 500)
+
+  stop: ->
+    body = document.body
+    body.removeAttribute("data-fonts-cjk-editorFont")
+    body.removeAttribute("data-fonts-cjk-markdownPreviewFont")
+    body.removeAttribute("data-fonts-cjk-workspaceFont")
+
+    @observer?.dispose()
