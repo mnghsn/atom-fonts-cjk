@@ -10,26 +10,15 @@
   }
 }
 
-.editor-font (@fonts) {
-  atom-text-editor.editor {
-    font-family: @fonts;
-  }
-  .settings-view {
-    atom-text-editor.editor.mini {
-      font-family: @fonts !important;
-    }
-  }
+atom-text-editor.editor {
+  font-family: var(--fonts-cjk-editorFont);
 }
 
-.markdown-preview-font (@fonts) {
-  .markdown-preview {
-    font-family: @fonts !important;
-  }
+.markdown-preview {
+  font-family: var(--fonts-cjk-markdownPreviewFont) !important;
 }
 
-.workspace-font (@fonts) {
-  atom-workspace,
-  .settings-view {
-    font-family: @fonts !important;
-  }
+atom-workspace,
+.settings-view {
+  font-family: var(--fonts-cjk-workspaceFont) !important;
 }

@@ -6,27 +6,23 @@ module.exports =
       atom.workspace.increaseFontSize()
       atom.workspace.decreaseFontSize()
 
-    applyFont = (type) ->
-      body.setAttribute(
-        "data-fonts-cjk-#{type}"
-        atom.config.get("fonts-cjk.#{type}")
-      )
+    applyFont = ->
+      fonts = """
+        --fonts-cjk-editorFont: "#{atom.config.get("fonts-cjk.editorFont")}";
+        --fonts-cjk-markdownPreviewFont: "#{atom.config.get("fonts-cjk.markdownPreviewFont")}";
+        --fonts-cjk-workspaceFont: "#{atom.config.get("fonts-cjk.workspaceFont")}";
+      """
+      body.setAttribute("style", fonts)
       triggerMeasurements()
 
-    [
-      'editorFont'
-      'markdownPreviewFont'
-      'workspaceFont'
-    ].forEach (type) ->
-      applyFont(type)
-      @observer = atom.config.observe("fonts-cjk.#{type}", -> applyFont(type))
+    @observer = atom.config.observe("fonts-cjk.editorFont", -> applyFont())
+    @observer = atom.config.observe("fonts-cjk.markdownPreviewFont", -> applyFont())
+    @observer = atom.config.observe("fonts-cjk.workspaceFont", -> applyFont())
 
     setTimeout(triggerMeasurements, 500)
 
   stop: ->
     body = document.body
-    body.removeAttribute("data-fonts-cjk-editorFont")
-    body.removeAttribute("data-fonts-cjk-markdownPreviewFont")
-    body.removeAttribute("data-fonts-cjk-workspaceFont")
+    body.removeAttribute("style")
 
     @observer?.dispose()
