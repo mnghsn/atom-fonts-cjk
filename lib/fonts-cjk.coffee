@@ -17,11 +17,21 @@ module.exports =
       markdownPreviewFont = atom.config.get("fonts-cjk.markdownPreviewFont")
       workspaceFont = atom.config.get("fonts-cjk.workspaceFont")
       fonts = """
-        --fonts-cjk-editorFont: "#{editorFont}";
-        --fonts-cjk-markdownPreviewFont: "#{markdownPreviewFont}";
-        --fonts-cjk-workspaceFont: "#{workspaceFont}";
+        :root {
+          --fonts-cjk-editorFont: "#{editorFont}";
+          --fonts-cjk-markdownPreviewFont: "#{markdownPreviewFont}";
+          --fonts-cjk-workspaceFont: "#{workspaceFont}";
+        }
       """
-      setBodyAttribute("style", fonts)
+
+      if document.getElementById("fonts-cjk-style")
+        document.getElementById("fonts-cjk-style").textContent = fonts
+      else
+        style = document.createElement("style")
+        style.id = "fonts-cjk-style"
+        style.textContent = fonts
+        document.head.appendChild(style)
+
       setBodyAttribute("data-fonts-cjk-editorFont", editorFont)
       setBodyAttribute("data-fonts-cjk-markdownPreviewFont", markdownPreviewFont)
       setBodyAttribute("data-fonts-cjk-workspaceFont", workspaceFont)
@@ -38,6 +48,8 @@ module.exports =
     body.removeAttribute("data-fonts-cjk-editorFont")
     body.removeAttribute("data-fonts-cjk-markdownPreviewFont")
     body.removeAttribute("data-fonts-cjk-workspaceFont")
-    body.removeAttribute("style")
+
+    style = document.getElementById("fonts-cjk-style")
+    style?.parentNode.removeChild(style)
 
     @observer?.dispose()
