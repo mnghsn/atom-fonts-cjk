@@ -6,13 +6,25 @@ module.exports =
       atom.workspace.increaseFontSize()
       atom.workspace.decreaseFontSize()
 
+    setBodyAttribute = (attr, value, def = "(Default)") ->
+      unless value == def
+        body.setAttribute(attr, value)
+      else
+        body.removeAttribute(attr)
+
     applyFont = ->
+      editorFont = atom.config.get("fonts-cjk.editorFont");
+      markdownPreviewFont = atom.config.get("fonts-cjk.markdownPreviewFont");
+      workspaceFont = atom.config.get("fonts-cjk.workspaceFont");
       fonts = """
-        --fonts-cjk-editorFont: "#{atom.config.get("fonts-cjk.editorFont")}";
-        --fonts-cjk-markdownPreviewFont: "#{atom.config.get("fonts-cjk.markdownPreviewFont")}";
-        --fonts-cjk-workspaceFont: "#{atom.config.get("fonts-cjk.workspaceFont")}";
+        --fonts-cjk-editorFont: "#{editorFont}";
+        --fonts-cjk-markdownPreviewFont: "#{markdownPreviewFont}";
+        --fonts-cjk-workspaceFont: "#{workspaceFont}";
       """
-      body.setAttribute("style", fonts)
+      setBodyAttribute("style", fonts)
+      setBodyAttribute("data-fonts-cjk-editorFont", editorFont)
+      setBodyAttribute("data-fonts-cjk-markdownPreviewFont", markdownPreviewFont)
+      setBodyAttribute("data-fonts-cjk-workspaceFont", workspaceFont)
       triggerMeasurements()
 
     @observer = atom.config.observe("fonts-cjk.editorFont", -> applyFont())
@@ -23,6 +35,9 @@ module.exports =
 
   stop: ->
     body = document.body
+    body.removeAttribute("data-fonts-cjk-editorFont")
+    body.removeAttribute("data-fonts-cjk-markdownPreviewFont")
+    body.removeAttribute("data-fonts-cjk-workspaceFont")
     body.removeAttribute("style")
 
     @observer?.dispose()
