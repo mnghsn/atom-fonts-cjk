@@ -1,7 +1,10 @@
+{CompositeDisposable} = require('atom')
+
 module.exports =
   run: ->
     @body = document.body
     @style = document.createElement('style')
+    @disposables = new CompositeDisposable
 
     triggerMeasurements = ->
       atom.workspace.increaseFontSize()
@@ -32,9 +35,9 @@ module.exports =
 
     document.head.appendChild(@style)
 
-    @observer = atom.config.observe('fonts-cjk.editorFont', -> applyFont())
-    @observer = atom.config.observe('fonts-cjk.markdownPreviewFont', -> applyFont())
-    @observer = atom.config.observe('fonts-cjk.workspaceFont', -> applyFont())
+    @disposables.add(atom.config.observe('fonts-cjk.editorFont', applyFont))
+    @disposables.add(atom.config.observe('fonts-cjk.markdownPreviewFont', applyFont))
+    @disposables.add(atom.config.observe('fonts-cjk.workspaceFont', applyFont))
 
     setTimeout(triggerMeasurements, 500)
 
@@ -43,5 +46,4 @@ module.exports =
     @body.removeAttribute('data-fonts-cjk-markdownPreviewFont')
     @body.removeAttribute('data-fonts-cjk-workspaceFont')
     @style.parentNode.removeChild(@style)
-
-    @observer?.dispose()
+    @disposables.dispose()
