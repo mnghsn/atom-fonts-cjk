@@ -6,8 +6,8 @@ module.exports =
       atom.workspace.increaseFontSize()
       atom.workspace.decreaseFontSize()
 
-    setBodyAttribute = (attr, value, def = '(Default)') ->
-      unless value == def
+    setBodyAttribute = (attr, value) ->
+      unless value == '(Default)'
         body.setAttribute(attr, value)
       else
         body.removeAttribute(attr)
