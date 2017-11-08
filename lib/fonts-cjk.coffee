@@ -1,16 +1,16 @@
 module.exports =
   run: ->
-    body = document.body
+    @body = document.body
 
     triggerMeasurements = ->
       atom.workspace.increaseFontSize()
       atom.workspace.decreaseFontSize()
 
-    setBodyAttribute = (attr, value) ->
+    setBodyAttribute = (attr, value) =>
       unless value == '(Default)'
-        body.setAttribute(attr, value)
+        @body.setAttribute(attr, value)
       else
-        body.removeAttribute(attr)
+        @body.removeAttribute(attr)
 
     applyFont = ->
       editorFont = atom.config.get('fonts-cjk.editorFont')
@@ -44,10 +44,9 @@ module.exports =
     setTimeout(triggerMeasurements, 500)
 
   stop: ->
-    body = document.body
-    body.removeAttribute('data-fonts-cjk-editorFont')
-    body.removeAttribute('data-fonts-cjk-markdownPreviewFont')
-    body.removeAttribute('data-fonts-cjk-workspaceFont')
+    @body.removeAttribute('data-fonts-cjk-editorFont')
+    @body.removeAttribute('data-fonts-cjk-markdownPreviewFont')
+    @body.removeAttribute('data-fonts-cjk-workspaceFont')
 
     style = document.getElementById('fonts-cjk-style')
     style?.parentNode.removeChild(style)
