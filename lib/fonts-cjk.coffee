@@ -1,6 +1,7 @@
 module.exports =
   run: ->
     @body = document.body
+    @style = document.createElement('style')
 
     triggerMeasurements = ->
       atom.workspace.increaseFontSize()
@@ -12,11 +13,11 @@ module.exports =
       else
         @body.removeAttribute(attr)
 
-    applyFont = ->
+    applyFont = =>
       editorFont = atom.config.get('fonts-cjk.editorFont')
       markdownPreviewFont = atom.config.get('fonts-cjk.markdownPreviewFont')
       workspaceFont = atom.config.get('fonts-cjk.workspaceFont')
-      fonts = """
+      @style.textContent = """
         :root {
           --fonts-cjk-editorFont: "#{editorFont}";
           --fonts-cjk-markdownPreviewFont: "#{markdownPreviewFont}";
@@ -24,18 +25,12 @@ module.exports =
         }
       """
 
-      if document.getElementById('fonts-cjk-style')
-        document.getElementById('fonts-cjk-style').textContent = fonts
-      else
-        style = document.createElement('style')
-        style.id = 'fonts-cjk-style'
-        style.textContent = fonts
-        document.head.appendChild(style)
-
       setBodyAttribute('data-fonts-cjk-editorFont', editorFont)
       setBodyAttribute('data-fonts-cjk-markdownPreviewFont', markdownPreviewFont)
       setBodyAttribute('data-fonts-cjk-workspaceFont', workspaceFont)
       triggerMeasurements()
+
+    document.head.appendChild(@style)
 
     @observer = atom.config.observe('fonts-cjk.editorFont', -> applyFont())
     @observer = atom.config.observe('fonts-cjk.markdownPreviewFont', -> applyFont())
@@ -47,8 +42,6 @@ module.exports =
     @body.removeAttribute('data-fonts-cjk-editorFont')
     @body.removeAttribute('data-fonts-cjk-markdownPreviewFont')
     @body.removeAttribute('data-fonts-cjk-workspaceFont')
-
-    style = document.getElementById('fonts-cjk-style')
-    style?.parentNode.removeChild(style)
+    @style.parentNode.removeChild(@style)
 
     @observer?.dispose()
