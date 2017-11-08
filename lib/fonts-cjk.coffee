@@ -27,18 +27,15 @@ module.exports =
           --fonts-cjk-workspaceFont: "#{workspaceFont}";
         }
       """
-
       setBodyAttribute('data-fonts-cjk-editorFont', editorFont)
       setBodyAttribute('data-fonts-cjk-markdownPreviewFont', markdownPreviewFont)
       setBodyAttribute('data-fonts-cjk-workspaceFont', workspaceFont)
       triggerMeasurements()
 
     document.head.appendChild(@style)
-
     @disposables.add(atom.config.observe('fonts-cjk.editorFont', applyFont))
     @disposables.add(atom.config.observe('fonts-cjk.markdownPreviewFont', applyFont))
     @disposables.add(atom.config.observe('fonts-cjk.workspaceFont', applyFont))
-
     setTimeout(triggerMeasurements, 500)
 
   stop: ->
