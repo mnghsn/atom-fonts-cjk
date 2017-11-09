@@ -1,7 +1,7 @@
 fonts_cjk = require('../lib/fonts-cjk')
 
 describe 'Fonts CJK', ->
-  [workspaceElement] = []
+  [textEditorElement, workspaceElement] = []
 
   getFontFamily = (selector) ->
     element = if selector then workspaceElement.querySelector(selector) else workspaceElement
@@ -14,6 +14,7 @@ describe 'Fonts CJK', ->
       atom.workspace.open('file.txt')
     runs ->
       fonts_cjk.run()
+      textEditorElement = atom.workspace.getActiveTextEditor().getElement()
       workspaceElement = atom.views.getView(atom.workspace)
       jasmine.attachToDOM(workspaceElement)
 
@@ -34,7 +35,7 @@ describe 'Fonts CJK', ->
       waitsForPromise ->
         atom.packages.activatePackage('markdown-preview')
       runs ->
-        atom.commands.dispatch(workspaceElement, 'markdown-preview:toggle')
+        atom.commands.dispatch(textEditorElement, 'markdown-preview:toggle')
       waitsFor 'markdown preview to be created', ->
         preview = atom.workspace.getPanes()[1].getActiveItem()
       runs ->
