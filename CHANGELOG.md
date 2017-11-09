@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.1.1] - 2017-11-09
+
+* Refactored codes and fixed bugs.
+
 ## [v1.1.0] - 2017-06-19
 
 * Apply fonts to GitHub panel.
@@ -31,6 +35,7 @@
 * First public release.
 
 
+[v1.1.1]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v1.1.1
 [v1.1.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v1.1.0
 [v1.0.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v1.0.0
 [v0.1.3]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v0.1.3
