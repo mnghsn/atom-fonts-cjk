@@ -1,3 +1,5 @@
+fontsCJK = require('./fonts-cjk')
+
 module.exports =
   config:
     editorFont:
@@ -60,9 +62,7 @@ module.exports =
       ]
 
   activate: ->
-    fonts_cjk = require('./fonts-cjk')
-    fonts_cjk.run()
+    fontsCJK.run()
 
   deactivate: ->
-    fonts_cjk = require('./fonts-cjk')
-    fonts_cjk.stop()
+    fontsCJK.stop()
