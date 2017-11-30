@@ -1,6 +1,6 @@
 @root-path: 'atom://fonts-cjk/resources';
 
-.font(@name, @weight, @style, @file) {
+.font(@name; @weight; @style; @file) {
   @font-path: '@{root-path}/@{file}';
   @font-face {
     font-family: @name;
