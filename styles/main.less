@@ -32,3 +32,23 @@
 .font('Source Han Sans TW', 700, normal, 'source-han-sans/SourceHanSansTW-Bold.otf');
 .font('Source Han Sans CN', 400, normal, 'source-han-sans/SourceHanSansCN-Regular.otf');
 .font('Source Han Sans CN', 700, normal, 'source-han-sans/SourceHanSansCN-Bold.otf');
+
+[data-fonts-cjk-editorFont] {
+  atom-text-editor.editor {
+    font-family: var(--fonts-cjk-editorFont);
+  }
+}
+
+[data-fonts-cjk-markdownPreviewFont] {
+  .markdown-preview {
+    font-family: var(--fonts-cjk-markdownPreviewFont) !important;
+  }
+}
+
+[data-fonts-cjk-workspaceFont] {
+  atom-workspace,
+  .settings-view,
+  .github-Panel {
+    font-family: var(--fonts-cjk-workspaceFont) !important;
+  }
+}
