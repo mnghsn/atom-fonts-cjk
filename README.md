@@ -20,11 +20,11 @@ Search for `fonts-cjk` in Atom settings view and install it or run `apm install 
 
 | Font Name | License |
 | --------- | ------- |
-| [MigMix](http://mix-mplus-ipa.osdn.jp/migmix/) | IPA Font License Agreement v1.0 |
-| [Migu](http://mix-mplus-ipa.osdn.jp/migu/) | IPA Font License Agreement v1.0 |
+| [M+ FONTS](https://mplus-fonts.osdn.jp/) | Free |
+| [Noto Sans CJK](https://www.google.com/get/noto/) | SIL Open Font License v1.1 |
 | [Ricty Diminished](https://github.com/yascentur/RictyDiminished) | SIL Open Font License v1.1 |
-| [Source Han Code JP](https://github.com/adobe-fonts/source-han-code-jp) | SIL Open Font License v1.1 |
-| [Source Han Sans](https://github.com/adobe-fonts/source-han-sans) | SIL Open Font License v1.1 |
+
+**Note:** Some fonts have been subsetted to reduce the package size.
 
 ## License
 

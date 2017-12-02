@@ -21,15 +21,15 @@ describe 'Fonts CJK', ->
 
   describe 'when editor font settings is changed', ->
     it 'set editor font', ->
-      atom.config.set('fonts-cjk.editorFont', 'Migu 1M')
-      expect(atom.config.get('fonts-cjk.editorFont'), 'Migu 1M')
-      expect(getFontFamily('atom-text-editor.editor')).toBe('Migu 1M')
+      atom.config.set('fonts-cjk.editorFont', 'M+ 1m')
+      expect(atom.config.get('fonts-cjk.editorFont'), 'M+ 1m')
+      expect(getFontFamily('atom-text-editor.editor')).toBe('M+ 1m')
 
   describe 'when workspace font settings is changed', ->
     it 'set workspace font', ->
-      atom.config.set('fonts-cjk.workspaceFont', 'Migu 1P')
-      expect(atom.config.get('fonts-cjk.workspaceFont'), 'Migu 1P')
-      expect(getFontFamily()).toBe('Migu 1P')
+      atom.config.set('fonts-cjk.workspaceFont', 'M+ 1p')
+      expect(atom.config.get('fonts-cjk.workspaceFont'), 'M+ 1p')
+      expect(getFontFamily()).toBe('M+ 1p')
 
   describe 'when markdown preview font settings is changed', ->
     it 'set markdown preview font', ->
@@ -40,6 +40,6 @@ describe 'Fonts CJK', ->
       waitsFor 'markdown preview to be created', ->
         preview = atom.workspace.getPanes()[1].getActiveItem()
       runs ->
-        atom.config.set('fonts-cjk.markdownPreviewFont', 'Migu 1P')
-        expect(atom.config.get('fonts-cjk.markdownPreviewFont'), 'Migu 1P')
-        expect(getFontFamily('.markdown-preview')).toBe('Migu 1P')
+        atom.config.set('fonts-cjk.markdownPreviewFont', 'M+ 1p')
+        expect(atom.config.get('fonts-cjk.markdownPreviewFont'), 'M+ 1p')
+        expect(getFontFamily('.markdown-preview')).toBe('M+ 1p')
