@@ -6,6 +6,7 @@ module.exports =
       type: 'string'
       title: 'Editor Font'
       description: 'Use one of the fonts available in this package.'
+      order: 1
       default: '(Default)'
       enum: [
         '(Default)'
@@ -20,6 +21,7 @@ module.exports =
       type: 'string'
       title: 'Markdown Preview Font'
       description: 'Use one of the fonts available in this package.'
+      order: 2
       default: '(Default)'
       enum: [
         '(Default)'
@@ -42,6 +44,7 @@ module.exports =
       type: 'string'
       title: 'Workspace Font'
       description: 'Use one of the fonts available in this package.'
+      order: 3
       default: '(Default)'
       enum: [
         '(Default)'
