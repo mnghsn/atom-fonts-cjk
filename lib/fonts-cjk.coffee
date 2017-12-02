@@ -3,7 +3,7 @@
 module.exports =
   run: ->
     @body = document.body
-    @style = document.createElement('style')
+    @style = document.body.style
     @disposables = new CompositeDisposable
 
     triggerMeasurements = ->
@@ -20,19 +20,14 @@ module.exports =
       editorFont = atom.config.get('fonts-cjk.editorFont')
       markdownPreviewFont = atom.config.get('fonts-cjk.markdownPreviewFont')
       workspaceFont = atom.config.get('fonts-cjk.workspaceFont')
-      @style.textContent = """
-        :root {
-          --fonts-cjk-editorFont: "#{editorFont}";
-          --fonts-cjk-markdownPreviewFont: "#{markdownPreviewFont}";
-          --fonts-cjk-workspaceFont: "#{workspaceFont}";
-        }
-      """
+      @style.setProperty('--fonts-cjk-editorFont', "'#{editorFont}'")
+      @style.setProperty('--fonts-cjk-markdownPreviewFont', "'#{markdownPreviewFont}'")
+      @style.setProperty('--fonts-cjk-workspaceFont', "'#{workspaceFont}'")
       setBodyAttribute('data-fonts-cjk-editorFont', editorFont)
       setBodyAttribute('data-fonts-cjk-markdownPreviewFont', markdownPreviewFont)
       setBodyAttribute('data-fonts-cjk-workspaceFont', workspaceFont)
       triggerMeasurements()
 
-    document.head.appendChild(@style)
     @disposables.add(atom.config.observe('fonts-cjk.editorFont', applyFont))
     @disposables.add(atom.config.observe('fonts-cjk.markdownPreviewFont', applyFont))
     @disposables.add(atom.config.observe('fonts-cjk.workspaceFont', applyFont))
@@ -42,5 +37,7 @@ module.exports =
     @body.removeAttribute('data-fonts-cjk-editorFont')
     @body.removeAttribute('data-fonts-cjk-markdownPreviewFont')
     @body.removeAttribute('data-fonts-cjk-workspaceFont')
-    @style.parentNode.removeChild(@style)
+    @style.removeProperty('--fonts-cjk-editorFont')
+    @style.removeProperty('--fonts-cjk-markdownPreviewFont')
+    @style.removeProperty('--fonts-cjk-workspaceFont')
     @disposables.dispose()
