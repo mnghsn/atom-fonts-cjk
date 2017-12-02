@@ -24,9 +24,8 @@ triggerMeasurements = ->
 
 applyFont = (type, font) ->
   unless font == '(Default)' or font == ''
-    font = "'#{font}'"
     document.body.classList.add("fonts-cjk-#{type}")
-    document.body.style.setProperty("--fonts-cjk-#{type}", font)
+    document.body.style.setProperty("--fonts-cjk-#{type}", "'#{font}'")
   else
     document.body.classList.remove("fonts-cjk-#{type}")
     document.body.style.removeProperty("--fonts-cjk-#{type}")
