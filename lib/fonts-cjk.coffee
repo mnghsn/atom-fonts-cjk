@@ -4,17 +4,17 @@ module.exports =
   run: ->
     @disposables = new CompositeDisposable
     @disposables.add(
-      atom.config.observe('fonts-cjk.editorFont', (font) -> applyFont('editorFont', font)),
-      atom.config.observe('fonts-cjk.markdownPreviewFont', (font) -> applyFont('markdownPreviewFont', font)),
-      atom.config.observe('fonts-cjk.workspaceFont', (font) -> applyFont('workspaceFont', font))
+      atom.config.observe('fonts-cjk.editorFont', (font) -> applyFont('editor-font', font)),
+      atom.config.observe('fonts-cjk.markdownPreviewFont', (font) -> applyFont('markdown-preview-font', font)),
+      atom.config.observe('fonts-cjk.workspaceFont', (font) -> applyFont('workspace-font', font))
     )
     setTimeout(triggerMeasurements, 500)
 
   stop: ->
     @disposables.dispose()
-    applyFont('editorFont')
-    applyFont('markdownPreviewFont')
-    applyFont('workspaceFont')
+    applyFont('editor-font')
+    applyFont('markdown-preview-font')
+    applyFont('workspace-font')
 
 triggerMeasurements = ->
   atom.workspace.increaseFontSize()
