@@ -1,11 +1,10 @@
 @root-path: 'atom://fonts-cjk/resources';
 
-.font(@name; @weight; @style; @file) {
-  @font-path: '@{root-path}/@{file}';
+.font (@name; @weight; @style; @file) {
   @font-face {
     font-family: @name;
     font-weight: @weight;
     font-style: @style;
-    src: local(@name), url(@font-path);
+    src: url('@{root-path}/@{file}');
   }
 }
