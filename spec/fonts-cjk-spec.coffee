@@ -5,7 +5,8 @@ describe 'Fonts CJK', ->
 
   getFontFamily = (selector) ->
     element = if selector then workspaceElement.querySelector(selector) else workspaceElement
-    return getComputedStyle(element).fontFamily.replace(/"(.+)"/, '$1')
+    fonts = getComputedStyle(element).fontFamily.split(',')
+    return fonts[0].replace(/"(.+)"/, '$1')
 
   beforeEach ->
     waitsForPromise ->

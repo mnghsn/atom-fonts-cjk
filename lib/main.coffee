@@ -63,6 +63,12 @@ module.exports =
         'Source Han Sans TW'
         'Source Han Sans CN'
       ]
+    secondaryFont:
+      type: 'string'
+      title: 'Secondary Font'
+      description: 'Additional fonts for glyphs missing in the main font.'
+      order: 4
+      default: ''
 
   activate: ->
     fontsCJK.run()

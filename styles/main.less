@@ -35,13 +35,13 @@
 
 .fonts-cjk-editor-font {
   atom-text-editor.editor {
-    font-family: var(--fonts-cjk-editor-font);
+    font-family: var(--fonts-cjk-editor-font), var(--fonts-cjk-secondary-font, monospace);
   }
 }
 
 .fonts-cjk-markdown-preview-font {
   .markdown-preview {
-    font-family: var(--fonts-cjk-markdown-preview-font) !important;
+    font-family: var(--fonts-cjk-markdown-preview-font), var(--fonts-cjk-secondary-font, sans-serif) !important;
   }
 }
 
@@ -49,6 +49,6 @@
   atom-workspace,
   .settings-view,
   .github-Panel {
-    font-family: var(--fonts-cjk-workspace-font) !important;
+    font-family: var(--fonts-cjk-workspace-font), var(--fonts-cjk-secondary-font, sans-serif) !important;
   }
 }
