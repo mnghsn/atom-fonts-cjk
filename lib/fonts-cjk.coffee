@@ -2,42 +2,30 @@
 
 module.exports =
   run: ->
-    @classList = document.body.classList
-    @style = document.body.style
     @disposables = new CompositeDisposable
-
-    triggerMeasurements = ->
-      atom.workspace.increaseFontSize()
-      atom.workspace.decreaseFontSize()
-
-    setBodyClass = (attr, value) =>
-      unless value == '(Default)'
-        @classList.add("fonts-cjk-#{attr}")
-      else
-        @classList.remove("fonts-cjk-#{attr}")
-
-    applyFont = =>
-      editorFont = atom.config.get('fonts-cjk.editorFont')
-      markdownPreviewFont = atom.config.get('fonts-cjk.markdownPreviewFont')
-      workspaceFont = atom.config.get('fonts-cjk.workspaceFont')
-      @style.setProperty('--fonts-cjk-editorFont', "'#{editorFont}'")
-      @style.setProperty('--fonts-cjk-markdownPreviewFont', "'#{markdownPreviewFont}'")
-      @style.setProperty('--fonts-cjk-workspaceFont', "'#{workspaceFont}'")
-      setBodyClass('editorFont', editorFont)
-      setBodyClass('markdownPreviewFont', markdownPreviewFont)
-      setBodyClass('workspaceFont', workspaceFont)
-      triggerMeasurements()
-
-    @disposables.add(atom.config.observe('fonts-cjk.editorFont', applyFont))
-    @disposables.add(atom.config.observe('fonts-cjk.markdownPreviewFont', applyFont))
-    @disposables.add(atom.config.observe('fonts-cjk.workspaceFont', applyFont))
+    @disposables.add(
+      atom.config.observe('fonts-cjk.editorFont', (font) -> applyFont('editorFont', font)),
+      atom.config.observe('fonts-cjk.markdownPreviewFont', (font) -> applyFont('markdownPreviewFont', font)),
+      atom.config.observe('fonts-cjk.workspaceFont', (font) -> applyFont('workspaceFont', font))
+    )
     setTimeout(triggerMeasurements, 500)
 
   stop: ->
-    @classList.remove('fonts-cjk-editorFont')
-    @classList.remove('fonts-cjk-markdownPreviewFont')
-    @classList.remove('fonts-cjk-workspaceFont')
-    @style.removeProperty('--fonts-cjk-editorFont')
-    @style.removeProperty('--fonts-cjk-markdownPreviewFont')
-    @style.removeProperty('--fonts-cjk-workspaceFont')
     @disposables.dispose()
+    applyFont('editorFont')
+    applyFont('markdownPreviewFont')
+    applyFont('workspaceFont')
+
+triggerMeasurements = ->
+  atom.workspace.increaseFontSize()
+  atom.workspace.decreaseFontSize()
+
+applyFont = (type, font) ->
+  unless font == '(Default)' or font == null
+    font = "'#{font}'"
+    document.body.classList.add("fonts-cjk-#{type}")
+    document.body.style.setProperty("--fonts-cjk-#{type}", font)
+  else
+    document.body.classList.remove("fonts-cjk-#{type}")
+    document.body.style.removeProperty("--fonts-cjk-#{type}")
+  triggerMeasurements()
