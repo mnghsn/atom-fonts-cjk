@@ -1,5 +1,21 @@
 # Changelog
 
+## [v2.0.0] - 2017-12-03
+
+* Since v2.0.0, packaged fonts are changed and subsetted to reduce the file size.
+  * Added fonts:
+    * **M+ FONTS**
+    * **Noto Sans CJK**
+    * **Sarasa Gothic** (the new version of **Inziu Iosevka**)
+  * Removed fonts:
+    * MigMix (replaced by M+)
+    * Migu (replaced by M+)
+    * Source Han Sans (replaced by Noto Sans CJK)
+    * Source Han Code JP
+* Added secondary font configuration for missing glyphs.
+* Improved performance when applying fonts.
+* Updated screenshot image.
+
 ## [v1.1.1] - 2017-11-09
 
 * Refactored codes and fixed bugs.
@@ -34,7 +50,7 @@
 
 * First public release.
 
-
+[v2.0.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v2.0.0
 [v1.1.1]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v1.1.1
 [v1.1.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v1.1.0
 [v1.0.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v1.0.0
