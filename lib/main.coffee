@@ -13,6 +13,9 @@ module.exports =
         'M+ 1m'
         'M+ 2m'
         'Ricty Diminished'
+        'Sarasa Mono J'
+        'Sarasa Mono SC'
+        'Sarasa Mono TC'
       ]
     markdownPreviewFont:
       type: 'string'
@@ -31,6 +34,9 @@ module.exports =
         'Noto Sans SC'
         'Noto Sans TC'
         'Ricty Diminished'
+        'Sarasa Mono J'
+        'Sarasa Mono SC'
+        'Sarasa Mono TC'
       ]
     workspaceFont:
       type: 'string'
@@ -49,6 +55,9 @@ module.exports =
         'Noto Sans SC'
         'Noto Sans TC'
         'Ricty Diminished'
+        'Sarasa Mono J'
+        'Sarasa Mono SC'
+        'Sarasa Mono TC'
       ]
     secondaryFont:
       type: 'string'
