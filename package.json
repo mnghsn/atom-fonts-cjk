@@ -25,7 +25,7 @@
     "url": "https://github.com/jmlntw/atom-fonts-cjk/issues"
   },
   "private": true,
-  "main": "./lib/main",
+  "main": "./lib/fonts-cjk",
   "engines": {
     "atom": ">=1.13.0 <2.0.0"
   },

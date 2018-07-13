@@ -1,7 +1,7 @@
 {CompositeDisposable} = require('atom')
 
 module.exports =
-  run: ->
+  activate: ->
     @disposables = new CompositeDisposable
     @disposables.add(
       atom.config.observe('fonts-cjk.editorFont', (font) -> applyFont('editor-font', font)),
@@ -11,7 +11,7 @@ module.exports =
     )
     setTimeout(triggerMeasurements, 500)
 
-  stop: ->
+  deactivate: ->
     @disposables.dispose()
     applyFont('editor-font', '')
     applyFont('markdown-preview-font', '')

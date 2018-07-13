@@ -14,7 +14,7 @@ describe 'Fonts CJK', ->
     waitsForPromise ->
       atom.workspace.open('file.txt')
     runs ->
-      fontsCJK.run()
+      fontsCJK.activate()
       textEditorElement = atom.workspace.getActiveTextEditor().getElement()
       workspaceElement = atom.views.getView(atom.workspace)
       jasmine.attachToDOM(workspaceElement)
