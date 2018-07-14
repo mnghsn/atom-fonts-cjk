@@ -1,5 +1,3 @@
-fontsCJK = require('../lib/fonts-cjk')
-
 describe 'Fonts CJK', ->
   [textEditorElement, workspaceElement] = []
 
@@ -14,7 +12,6 @@ describe 'Fonts CJK', ->
     waitsForPromise ->
       atom.workspace.open('file.txt')
     runs ->
-      fontsCJK.activate()
       textEditorElement = atom.workspace.getActiveTextEditor().getElement()
       workspaceElement = atom.views.getView(atom.workspace)
       jasmine.attachToDOM(workspaceElement)
