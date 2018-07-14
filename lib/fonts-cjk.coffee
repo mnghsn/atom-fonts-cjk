@@ -13,17 +13,17 @@ module.exports =
 
   deactivate: ->
     @disposables.dispose()
-    applyFont('editor-font', '')
-    applyFont('markdown-preview-font', '')
-    applyFont('workspace-font', '')
-    applyFont('secondary-font', '')
+    applyFont('editor-font')
+    applyFont('markdown-preview-font')
+    applyFont('workspace-font')
+    applyFont('secondary-font')
 
 triggerMeasurements = ->
   atom.workspace.increaseFontSize()
   atom.workspace.decreaseFontSize()
 
 applyFont = (type, font) ->
-  unless font == '(Default)' or font == ''
+  unless font == '(Default)' or font == null
     document.body.classList.add("fonts-cjk-#{type}")
     document.body.style.setProperty("--fonts-cjk-#{type}", "'#{font}'")
   else
