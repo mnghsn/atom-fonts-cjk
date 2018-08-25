@@ -1,11 +1,11 @@
 # Contributing
 > Do One Thing and Do It Well
 
-## Styleguides
+## Style Guide
 
 ### Syntax
 
-* Use [editorconfig](http://editorconfig.org/) to unify coding styles.
+* Use [EditorConfig](https://editorconfig.org/) to define and maintain consistent coding styles.
 * Use 2 spaces indentation.
 * Use UTF-8 encoding without BOM.
 * Use Unix-style line endings (`LF`).
@@ -38,7 +38,6 @@
 ## Pull Request Guidelines
 
 * Create a topic branch from `master`.
-* Follow the [styleguides](#styleguides).
 * Squash the commit if there are too many small ones.
 * If adding a new feature, provide convincing reasons to add this feature.
 * If fixing a bug, provide a detailed description in the PR.
@@ -54,4 +53,4 @@ $ cd atom-fonts-cjk
 $ atom --test --timeout 60 ./spec/
 ```
 
-For more information about Atom package specs, see [Hacking Atom: Writing specs](http://flight-manual.atom.io/hacking-atom/sections/writing-specs/) section in the [Atom Flight Manual](http://flight-manual.atom.io/).
+For more information about Atom package specs, see [Hacking Atom: Writing specs](https://flight-manual.atom.io/hacking-atom/sections/writing-specs/) section in the [Atom Flight Manual](https://flight-manual.atom.io/).
