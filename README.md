@@ -18,12 +18,12 @@ Search for `fonts-cjk` in Atom settings view and install it or run `apm install 
 
 ## Available Fonts
 
-| Font Name | License |
-| --------- | ------- |
-| [M+ FONTS](https://mplus-fonts.osdn.jp/) | Free |
-| [Noto Sans CJK](https://www.google.com/get/noto/help/cjk/) | SIL Open Font License v1.1 |
+| Font Name                                                        | License                    |
+| ---------------------------------------------------------------- | -------------------------- |
+| [M+ FONTS](https://mplus-fonts.osdn.jp/)                         | Free                       |
+| [Noto Sans CJK](https://www.google.com/get/noto/help/cjk/)       | SIL Open Font License v1.1 |
 | [Ricty Diminished](https://github.com/yascentur/RictyDiminished) | SIL Open Font License v1.1 |
-| [Sarasa Gothic](https://github.com/be5invis/Sarasa-Gothic) | BSD 3-Clause License |
+| [Sarasa Gothic](https://github.com/be5invis/Sarasa-Gothic)       | BSD 3-Clause License       |
 
 **Note:** Fonts have been subsetted to reduce the package size. You can specify an additional font for missing glyphs.
 
