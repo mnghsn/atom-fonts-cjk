@@ -13,10 +13,10 @@
   ],
   "author": {
     "name": "Jimmy Lin",
-    "email": "jmlntw@gmail.com",
-    "url": "https://jmln.tw/"
+    "email": "jmlntw@gmail.com"
   },
   "license": "MIT",
+  "homepage": "https://github.com/jmlntw/atom-fonts-cjk",
   "repository": {
     "type": "git",
     "url": "https://github.com/jmlntw/atom-fonts-cjk.git"
@@ -24,11 +24,11 @@
   "bugs": {
     "url": "https://github.com/jmlntw/atom-fonts-cjk/issues"
   },
-  "private": true,
   "main": "./lib/fonts-cjk",
   "engines": {
     "atom": ">=1.13.0 <2.0.0"
   },
+  "private": true,
   "configSchema": {
     "editorFont": {
       "type": "string",
