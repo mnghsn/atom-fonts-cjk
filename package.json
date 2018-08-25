@@ -16,7 +16,7 @@
     "email": "jmlntw@gmail.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/jmlntw/atom-fonts-cjk",
+  "homepage": "https://atom.io/packages/fonts-cjk",
   "repository": {
     "type": "git",
     "url": "https://github.com/jmlntw/atom-fonts-cjk.git"
