@@ -32,13 +32,14 @@
 * Check if the issue is reproducible with the last stable version.
 * Use a clear and descriptive title for the issue.
 * When reporting a bug, describe the exact steps which reproduce the problem.
-* Include screenshots if necessary.
+* Include screenshots whenever possible.
 * Include your environment like Atom version and OS version.
 
 ## Pull Request Guidelines
 
 * Create a topic branch from `master`.
 * Squash the commit if there are too many small ones.
+* Make sure `apm --test` passes. (See [Development Setup](#development-setup).)
 * If adding a new feature, provide convincing reasons to add this feature.
 * If fixing a bug, provide a detailed description in the PR.
 
