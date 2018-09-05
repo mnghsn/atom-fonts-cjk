@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.1.0] - 2018-09-05
+
+* Update Sarasa Gothic to v2.1.0.
+
 ## [v2.0.0] - 2017-12-03
 
 * Change packaged fonts for smaller package size:
@@ -49,6 +53,7 @@ All notable changes to this project will be documented in this file.
 * First public release.
 
 <!-- Tags -->
+[v2.1.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v2.1.0
 [v2.0.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v2.0.0
 [v1.1.1]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v1.1.1
 [v1.1.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v1.1.0
