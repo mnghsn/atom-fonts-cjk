@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [v2.1.0] - 2018-09-05
 
-* Update Sarasa Gothic to v2.1.0.
+* Update Sarasa Gothic to v0.6.0.
 
 ## [v2.0.0] - 2017-12-03
 
