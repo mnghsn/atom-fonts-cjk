@@ -4,10 +4,10 @@ describe('set cjk fonts', () => {
   let textEditorElement
   let workspaceElement
 
-  const getFontFamily = (selector) => {
+  const getFontFamily = (selector, nth = 1) => {
     const element = selector ? workspaceElement.querySelector(selector) : workspaceElement
     const fonts = getComputedStyle(element).fontFamily.split(',')
-    return fonts[0].replace(/"(.+)"/, '$1')
+    return fonts[nth - 1].trim().replace(/"(.+)"/, '$1')
   }
 
   beforeEach(() => {
@@ -46,6 +46,16 @@ describe('set cjk fonts', () => {
         expect(atom.config.get('fonts-cjk.markdownPreviewFont')).toBe('M+ 1p')
         expect(getFontFamily('.markdown-preview')).toBe('M+ 1p')
       })
+    })
+  })
+
+  describe('when secondary font settings is changed', () => {
+    it('set secondary font', () => {
+      atom.config.set('fonts-cjk.editorFont', 'M+ 1m')
+      atom.config.set('fonts-cjk.secondaryFont', 'Droid Sans Mono')
+      expect(atom.config.get('fonts-cjk.editorFont')).toBe('M+ 1m')
+      expect(atom.config.get('fonts-cjk.secondaryFont')).toBe('Droid Sans Mono')
+      expect(getFontFamily('atom-text-editor.editor', 2)).toBe('Droid Sans Mono')
     })
   })
 })
