@@ -40,6 +40,7 @@ describe('set cjk fonts', () => {
     it('set markdown preview font', () => {
       waitsForPromise(() => atom.packages.activatePackage('markdown-preview'))
       runs(() => atom.commands.dispatch(textEditorElement, 'markdown-preview:toggle'))
+      waitsFor(() => atom.workspace.getPanes()[1].getActiveItem())
       runs(() => {
         atom.config.set('fonts-cjk.markdownPreviewFont', 'M+ 1p')
         expect(atom.config.get('fonts-cjk.markdownPreviewFont')).toBe('M+ 1p')
