@@ -20,6 +20,12 @@ describe('set cjk fonts', () => {
     })
   })
 
+  afterEach(() => {
+    runs(() => {
+      workspaceElement.remove()
+    })
+  })
+
   describe('when editor font settings is changed', () => {
     it('set editor font', () => {
       atom.config.set('fonts-cjk.editorFont', 'M+ 1m')
