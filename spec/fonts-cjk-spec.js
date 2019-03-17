@@ -13,6 +13,7 @@ describe('set cjk fonts', () => {
   beforeEach(() => {
     waitsForPromise(() => atom.packages.activatePackage('fonts-cjk'))
     waitsForPromise(() => atom.workspace.open())
+    waitsFor(() => atom.packages.isPackageActive('fonts-cjk'))
     runs(() => {
       textEditorElement = atom.workspace.getActiveTextEditor().getElement()
       workspaceElement = atom.views.getView(atom.workspace)
