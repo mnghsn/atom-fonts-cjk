@@ -25,6 +25,10 @@
     "url": "https://github.com/jmlntw/atom-fonts-cjk/issues"
   },
   "main": "./lib/fonts-cjk",
+  "scripts": {
+    "lint": "standard --verbose",
+    "test": "npm run lint && apm test"
+  },
   "engines": {
     "atom": ">=1.13.0 <2.0.0"
   },
