@@ -28,6 +28,20 @@
   "engines": {
     "atom": ">=1.13.0 <2.0.0"
   },
+  "devDependencies": {
+    "standard": "^12.0.0"
+  },
+  "standard": {
+    "env": [
+      "browser",
+      "node",
+      "atomtest",
+      "jasmine"
+    ],
+    "globals": [
+      "atom"
+    ]
+  },
   "private": true,
   "configSchema": {
     "editorFont": {
