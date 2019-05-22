@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.2.0] - 2019-05-23
+
+* Rewrite the libraries in pure JavaScript.
+* Improve the package test and add JavaScript linter.
+* Update Noto Sans CJK to v2.001.
+* Update Sarasa Gothic to v0.8.1.
+* Make GitHub panel fonts apply again.
+
 ## [v2.1.1] - 2018-09-05
 
 * Fix version typo in changelog.
@@ -57,6 +65,7 @@ All notable changes to this project will be documented in this file.
 * First public release.
 
 <!-- Tags -->
+[v2.2.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v2.2.0
 [v2.1.1]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v2.1.1
 [v2.1.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v2.1.0
 [v2.0.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v2.0.0
