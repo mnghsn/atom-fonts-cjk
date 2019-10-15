@@ -1,6 +1,7 @@
 {
   "name": "fonts-cjk",
   "version": "2.2.0",
+  "private": true,
   "description": "Delivers better CJK fonts to Atom editor.",
   "keywords": [
     "fonts",
@@ -11,42 +12,30 @@
     "monospace",
     "typography"
   ],
-  "author": {
-    "name": "Jimmy Lin",
-    "email": "jmlntw@gmail.com"
-  },
-  "license": "MIT",
   "homepage": "https://atom.io/packages/fonts-cjk",
+  "bugs": {
+    "url": "https://github.com/jmlntw/atom-fonts-cjk/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jmlntw/atom-fonts-cjk.git"
   },
-  "bugs": {
-    "url": "https://github.com/jmlntw/atom-fonts-cjk/issues"
+  "license": "MIT",
+  "author": {
+    "name": "Jimmy Lin",
+    "email": "jmlntw@gmail.com"
   },
   "main": "./lib/fonts-cjk",
   "scripts": {
     "lint": "standard --verbose",
     "test": "npm run lint && apm test"
   },
-  "engines": {
-    "atom": ">=1.13.0 <2.0.0"
-  },
   "devDependencies": {
     "standard": "^14.0.0"
   },
-  "standard": {
-    "env": [
-      "browser",
-      "node",
-      "atomtest",
-      "jasmine"
-    ],
-    "globals": [
-      "atom"
-    ]
+  "engines": {
+    "atom": ">=1.13.0 <2.0.0"
   },
-  "private": true,
   "configSchema": {
     "editorFont": {
       "type": "string",
@@ -115,5 +104,16 @@
       "order": 4,
       "default": ""
     }
+  },
+  "standard": {
+    "env": [
+      "browser",
+      "node",
+      "atomtest",
+      "jasmine"
+    ],
+    "globals": [
+      "atom"
+    ]
   }
 }
