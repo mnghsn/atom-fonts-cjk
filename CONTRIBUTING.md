@@ -50,8 +50,11 @@
 $ git clone https://github.com/<username>/atom-fonts-cjk.git
 $ cd atom-fonts-cjk
 
-# Run Atom package specs to make sure everything works fine.
-$ atom --test --timeout 60 ./spec/
+# Install required npm packages.
+$ npm install
+
+# Run npm test script to make sure everything works fine.
+$ npm run test
 ```
 
 For more information about Atom package specs, see [Hacking Atom: Writing specs](https://flight-manual.atom.io/hacking-atom/sections/writing-specs/) section in the [Atom Flight Manual](https://flight-manual.atom.io/).
