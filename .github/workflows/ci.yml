@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env:
+  CI: true
+
+jobs:
+  test:
+    name: Test
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        channel:
+          - stable
+          - beta
+    runs-on: ${{ matrix.os }}
+    env:
+      APM_TEST_PACKAGES: ""
+      ATOM_LINT_WITH_BUNDLED_NODE: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up Atom environment (Ubuntu and macOS)
+        if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
+        env:
+          ATOM_CHANNEL: ${{ matrix.channel }}
+        run: |
+          curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
+          chmod u+x build-package.sh
+          ./build-package.sh
+      - name: Set up Atom environment (Windows)
+        if: matrix.os == 'windows-latest'
+        env:
+          ATOM_CHANNEL: ${{ matrix.channel }}
+        run: |
+          iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/atom/ci/master/build-package.ps1'))
