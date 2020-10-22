@@ -24,6 +24,7 @@ jobs:
         channel:
           - stable
           - beta
+      fail-fast: false
     runs-on: ${{ matrix.os }}
     env:
       APM_TEST_PACKAGES: ""
@@ -31,17 +32,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Set up Atom environment (Ubuntu and macOS)
-        if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
-        env:
-          ATOM_CHANNEL: ${{ matrix.channel }}
-        run: |
-          curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
-          chmod u+x build-package.sh
-          ./build-package.sh
-      - name: Set up Atom environment (Windows)
-        if: matrix.os == 'windows-latest'
-        env:
-          ATOM_CHANNEL: ${{ matrix.channel }}
-        run: |
-          iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/atom/ci/master/build-package.ps1'))
+      - name: Set up Atom environment
+        uses: UziTech/action-setup-atom@v1
+        with:
+          channel: ${{ matrix.channel }}
+      - name: Check Atom version
+        run: atom --version
+      - name: Check APM version
+        run: apm --version
+      - name: Install dependencies
+        run: apm install
+      - name: Run APM test
+        run: apm --test spec
