@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env:
+  CI: true
+
+jobs:
+  test:
+    name: Test
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        channel:
+          - stable
+          - beta
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up Atom environment
+        uses: UziTech/action-setup-atom@v1
+        with:
+          channel: ${{ matrix.channel }}
+      - name: Check Atom version
+        run: atom --version
+      - name: Check APM version
+        run: apm --version
+      - name: Install dependencies
+        run: apm install
+      - name: Run NPM test
+        run: npm run test
