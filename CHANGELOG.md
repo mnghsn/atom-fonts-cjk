@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.3.0] - 2021-01-31
+
+* Update Noto Sans font family.
+* Update M+ fonts to TESTFLIGHT 063a.
+* Update Sarasa Gothic to v0.17.0.
+* Add Noto Sans KR (Korean) fonts.
+* Add Sarasa Mono HC (Hong Kong) fonts.
+* Add Sarasa Mono K (Korean) fonts.
+
 ## [v2.2.0] - 2019-05-23
 
 * Rewrite the libraries in pure JavaScript.
@@ -65,6 +74,7 @@ All notable changes to this project will be documented in this file.
 * First public release.
 
 <!-- Tags -->
+[v2.3.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v2.3.0
 [v2.2.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v2.2.0
 [v2.1.1]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v2.1.1
 [v2.1.0]: https://github.com/jmlntw/atom-fonts-cjk/releases/tag/v2.1.0
