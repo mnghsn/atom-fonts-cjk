@@ -4,6 +4,8 @@
 
 **fonts-cjk** delivers better CJK (Chinese/Japanese/Korean) fonts to Atom editor without installing new fonts to system. Inspired by [braver/fonts](https://github.com/braver/fonts).
 
+> :zzz: This project is not actively developed but will accept pull requests.
+
 ![A screenshot of fonts-cjk](https://raw.githubusercontent.com/jmlntw/atom-fonts-cjk/master/screenshot.gif)
 
 ## Features
