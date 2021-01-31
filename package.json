@@ -28,7 +28,7 @@
   "main": "./lib/fonts-cjk",
   "scripts": {
     "lint": "standard --verbose",
-    "test": "npm run lint && apm test"
+    "test": "npm run lint && atom --test spec"
   },
   "devDependencies": {
     "standard": "^16.0.0"
