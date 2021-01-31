@@ -38,6 +38,20 @@ jobs:
       - name: Check APM version
         run: apm --version
       - name: Install dependencies
-        run: apm install
-      - name: Run NPM test
-        run: npm run test
+        run: apm ci
+      - name: Run tests
+        run: atom --test spec
+
+  lint:
+    name: Lint
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up Node.js environment
+        uses: actions/setup-node@v2
+      - name: Install dependencies
+        run: npm ci
+      - name: Run code linter
+        run: npm run lint
