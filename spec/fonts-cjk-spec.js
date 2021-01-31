@@ -41,6 +41,26 @@ describe('set cjk fonts', () => {
       expect(atom.config.get('fonts-cjk.workspaceFont')).toBe('M+ 1p')
       expect(getFontFamily()).toBe('M+ 1p')
     })
+    it('set settings view font', () => {
+      waitsForPromise(() => atom.packages.activatePackage('settings-view'))
+      runs(() => atom.commands.dispatch(workspaceElement, 'settings-view:open'))
+      waitsFor(() => atom.workspace.getActivePaneItem().activePanel)
+      runs(() => {
+        atom.config.set('fonts-cjk.workspaceFont', 'M+ 1p')
+        expect(atom.config.get('fonts-cjk.workspaceFont')).toBe('M+ 1p')
+        expect(getFontFamily('.settings-view')).toBe('M+ 1p')
+      })
+    })
+    it('set git tab font', () => {
+      waitsForPromise(() => atom.packages.activatePackage('github'))
+      runs(() => atom.commands.dispatch(workspaceElement, 'github:toggle-git-tab'))
+      waitsFor(() => atom.workspace.getRightDock().isVisible())
+      runs(() => {
+        atom.config.set('fonts-cjk.workspaceFont', 'M+ 1p')
+        expect(atom.config.get('fonts-cjk.workspaceFont')).toBe('M+ 1p')
+        expect(getFontFamily('.github-Git')).toBe('M+ 1p')
+      })
+    })
   })
 
   describe('when markdown preview font settings is changed', () => {
