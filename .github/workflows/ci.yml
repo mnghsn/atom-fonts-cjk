@@ -28,9 +28,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Set up Atom environment
-        uses: UziTech/action-setup-atom@v1
+        uses: UziTech/action-setup-atom@v2
         with:
-          channel: ${{ matrix.channel }}
+          version: ${{ matrix.channel }}
       - name: Check Atom version
         run: atom --version
       - name: Check APM version
