@@ -19,9 +19,9 @@ Search for `fonts-cjk` in Atom settings view and install it or run `apm install 
 
 ## Available Fonts
 
-* [M+ FONTS](https://mplus-fonts.osdn.jp/)
-* [Noto Sans CJK](https://www.google.com/get/noto/help/cjk/)
-* [Ricty Diminished](https://www.rs.tus.ac.jp/yyusa/ricty_diminished.html)
+* [M+ FONTS](https://mplusfonts.github.io/)
+* [Noto Sans CJK](https://github.com/googlefonts/noto-cjk)
+* [Ricty Diminished](https://rictyfonts.github.io/diminished)
 * [Sarasa Gothic](https://github.com/be5invis/Sarasa-Gothic)
 
 **Note:** Fonts have been subsetted to reduce the package size. You can specify an additional font for missing glyphs.
