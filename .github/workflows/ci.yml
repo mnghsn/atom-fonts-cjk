@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-    tags:
-      - v[0-9]+.[0-9]+.[0-9]+
   pull_request:
     branches:
       - master
@@ -31,10 +29,6 @@ jobs:
         uses: UziTech/action-setup-atom@v2
         with:
           version: ${{ matrix.version }}
-      - name: Check Atom version
-        run: atom --version
-      - name: Check APM version
-        run: apm --version
       - name: Install dependencies
         run: apm ci
       - name: Run tests
@@ -54,22 +48,3 @@ jobs:
         run: npm ci
       - name: Run code linter
         run: npm run lint
-
-  publish:
-    name: Publish
-    runs-on: ubuntu-latest
-    if: |
-      startsWith(github.ref, 'refs/tags/v') &&
-      github.event.repository.fork == false
-    needs:
-      - test
-      - lint
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Set up Atom environment
-        uses: UziTech/action-setup-atom@v1
-      - name: Publish to Atom packages
-        env:
-          ATOM_ACCESS_TOKEN: ${{ secrets.ATOM_ACCESS_TOKEN }}
-        run: apm publish --tag "${GITHUB_REF/refs\/tags\//}"
