@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.3.1] - 2021-12-20
+
+* Update links in README.
+* Update test codes.
+
 ## [v2.3.0] - 2021-01-31
 
 * Update Noto Sans font family.
